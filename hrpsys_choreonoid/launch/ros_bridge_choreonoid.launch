@@ -10,6 +10,7 @@
   <arg name="USE_ROBOTHARDWARE"       default="true" />
   <arg name="USE_WALKING"             default="true"  />
   <arg name="USE_COLLISIONCHECK"      default="false" />
+  <!-- <arg name="USE_IMPEDANCECONTROLLER" default="true"  /> -->
   <arg name="USE_IMPEDANCECONTROLLER" default="true"  />
   <arg name="USE_GRASPCONTROLLER"     default="false" />
   <arg name="USE_SERVOCONTROLLER"     default="false" />
@@ -17,7 +18,9 @@
   <arg name="USE_SOFTERRORLIMIT"      default="false" />
   <arg name="USE_TORQUEFILTER"        default="false" />
   <!--arg name="USE_IMAGESENSOR" default="false" /-->
+  <!-- <arg name="USE_EMERGENCYSTOPPER"    default="true"  /> -->
   <arg name="USE_EMERGENCYSTOPPER"    default="true"  />
+  <!-- <arg name="USE_REFERENCEFORCEUPDATER" default="true" /> -->
   <arg name="USE_REFERENCEFORCEUPDATER" default="true" />
   <arg name="USE_OBJECTCONTACTTURNAROUNDDETECTOR" default="true" />
   <arg name="USE_HRPSYS_PROFILE"      default="true"  />
