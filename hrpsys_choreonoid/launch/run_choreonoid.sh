@@ -77,11 +77,15 @@ export CNOID_CUSTOMIZER_PATH=$(rospack find hrpsys_choreonoid)
 if [ -z "$cnoid_proj" ]; then
     echo "choreonoid will be executed by the command below" 1>&2
     echo "$ (cd /tmp; $choreonoid_exe --python $(rospack find hrpsys_choreonoid)/scripts/create_environment.py)" 1>&2
-    (cd /tmp; $choreonoid_exe --python $(rospack find hrpsys_choreonoid)/scripts/create_environment.py)
+    # (cd /tmp; $choreonoid_exe --python $(rospack find hrpsys_choreonoid)/scripts/create_environment.py)
+    # for using gdb
+    (cd /tmp; gdb -ex run --args $choreonoid_exe --python $(rospack find hrpsys_choreonoid)/scripts/create_environment.py)
 else
     echo "choreonoid will be executed by the command below" 1>&2
-    echo "$ (cd /tmp; $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)" 1>&2
-    (cd /tmp; $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)
-    ## for using gdb
-    #(cd /tmp; gdb -ex run --args $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)
+    # echo "$ (cd /tmp; $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)" 1>&2
+    # (cd /tmp; $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)
+    # for using gdb
+    echo "$ (cd /tmp; gdb -ex run --args $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)" 1>&2
+    (cd /tmp; gdb -ex run --args $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)
+    # (cd /tmp; gdb --args $choreonoid_exe $enable_const $add_objects $cnoid_proj $start_sim)
 fi
