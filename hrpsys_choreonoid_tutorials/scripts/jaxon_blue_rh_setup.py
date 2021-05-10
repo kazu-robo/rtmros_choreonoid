@@ -46,6 +46,7 @@ class JAXON_BLUECnoidHrpsysConfigurator(ChoreonoidHrpsysConfigurator, JAXON_BLUE
         # Suppress limit over message and behave like real robot that always angle-vector is in seq.
         self.setResetPose(1.0)
         self.startAutoBalancer()
+        self.setJointControlMode("all", OpenHRP.RobotHardwareService.TORQUE)
         # self.ic_svc.startImpedanceController("larm")
         # self.ic_svc.startImpedanceController("rarm")
         # self.startStabilizer()
